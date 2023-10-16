@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Regina Paratransit</title>
+   <meta Charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta name="author" content="Chinonso"/>
+   <meta name="keywords" content="Canada, saskatchewan, Regina, Paratransit, disability, book-Online, trip, accessibility, vehicle, R-card, First-transit, Door-to-Door Sevce,"/>
+   <meta name="description" content="Regina Paratransit is a shared ride transportation service for persons experiencing a disability who are restricted in using fixed route transit some of the time. The service is a scheduled door-to-door service for those who are registered."/>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <!--<meta http-equiv="refresh" content="1"/>-->
+   <link rel="icon" href="./Paratransitimage/Regina-icon.png" />
+   <link rel="stylesheet" href="./Paratransit.css"/>
+   <link rel="stylesheet" href="./animation/animatestyle.css.css"/>
+   <link rel="stylesheet" href="./font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css"/>
+   <script src="./Paratransit.js"></script>
+   <script src="./smtp.js"></script>
+ </head>
+ <body>
+   <div class="div0">
+     <div class="div1" id="button1">
+       <div class="div2">
+         <img src="./Paratransitimage/paratransit-logo.png" alt="logo" width="182.93 px" height="101.56 px" class="img1">
+         <img src="./Paratransitimage/paratra4444.png" alt="vehicle" width="90.34 px" height="32.29 px" class="img2">
+         <button onclick="Myfunction()" class="button1"> Book-Transit<i class="fa fa-angle-right"></i> </button>
+       </div>
+     </div>
+     <div id="div3">
+
+       
+         <div id="div12">
+           <div class="popup">
+           <img src="./Paratransitimage/paratra.png">
+           <h2>Thank You!</h2>
+           <p>Your details has been successful submitted. Thanks!</p>
+           <button onclick="ok()">OK</button>
+           </div>
+         </div>
+ 
+
+       <div class="div4">
+         <img src="./Paratransitimage/paratransit-logo.png" alt="logo" width="83.55 px" height="46.38 px"/>
+         <div class="div5"></div><p id="localTime"></p>
+         </div>
+      </div>
+       <MARQUEE>
+         <P><B>Note:</B> It is advisable to book ahead of time to get available spot.</P>
+       </MARQUEE>
+       <p class="P1">Fill out the Identity Form below</p>
+       <div class="div6">
+         <form id="myForm" method="POST">
+           <label for="fname"><i class="fa fa-user fa-fw"></i> &#160;First-Name:</label><br>
+           <input type="text" id="fname" name="First-Name" placeholder="First Name..."  class="text1" required><br>
+  
+           <label for="lname"><i class="fa fa-user fa-fw"></i> &#160;Last-Name:</label><br>
+           <input type="text" id="lname" name="last-Name" placeholder="Last Name..."  class="text1" required><br>
+  
+           <label for="email"><i class="fa fa-envelope fa-fw"></i> &#160;Email Address:</label><br>
+           <input type="email" id="email" name="Email-Address" placeholder="Email Address..."  required><br>
+  
+           <label for="tel"><i class="fa fa-phone fa-fw"></i> &#160;Phone Number:</label><br>
+           <input type="number" id="tel" name="Contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="10"  placeholder="(123) - 456 - 6789"
+           oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 10);" required><br>
+  
+           <label for="Home-Address"><i class="fa fa-home fa-fw"></i> &#160;Home Address:</label><br>
+           <input type="text" id="Home-Address" name="Home-Address" placeholder="Home Address..."  class="text1" required><br>
+  
+           <p class="P1">Book-Transit</p>
+           <hr/>
+           <p><i class="fa fa-calendar fa-fw"></i> &#160;<B> Choose Date for the Transit:</B></p>
+
+           <input type="checkbox" id="Today" name="What Day for the Transit" value="Today">
+           <label for="Today">Today</label><br>
+           <label for="Different1">Enter Different-Date: </label><input type="date" id="Different1" name="What-Date for the Ride" class="date" required><br>
+           
+           <p><i class="fa fa-user-plus fa-fw"></i> &#160;<B> Will you be Accompanied by anyone:</B></p>
+           <div class="div7">
+           <input type="radio" id="Are-you-accompanied-by-anyone1" name="Are you accompanied by anyone" value="Yes" onclick="c()">
+           <label for="Are-you-accompanied-by-anyone1">Yes</label>
+           <input type="radio" id="Are-you-accompanied-by-anyone2" name="Are you accompanied by anyone" value="NO" onclick="d()">
+           <label for="Are-you-accompanied-by-anyone2">NO</label><br>
+           </div><p class="P2" id="P2"></p>
+  
+           <p><i class="fa fa-street-view fa-fw"></i> &#160;<B>Choose Pick-up Location:</B></p>
+  
+           <input type="checkbox" id="HomePickup1" name="Where is Pickup" value="Pickup from Home">
+           <label for="HomePickup1">Home Pick-up</label><br>
+           <input type="text" id="HomePickup2" name="What is Pick-up location Address:" placeholder="OR Enter A Different Pick-up Address in full..." class="text" required>
+           <p class="P2"> Your Pick-up Time Will be sent to you by Email..</p>
+
+           <p><i class="fa fa-map-marker fa-fw"></i> &#160;<b>Choose Destination Location:</b></p>
+  
+           <input type="checkbox" id="HomeDropoff1" name="Where is Destination Location" value="Home Drop-off">
+           <label for="HomeDropoff1" id="HomeDropof1">Home Drop-off</label><br>
+           <input type="text" id="HomeDropoff2" name="Where is Destination Location" placeholder="OR Enter A Different Destination Address in full..." class="text" required><br>
+
+           <p><i class="fa fa-clock-o fa-fw"></i> &#160;<b>Choose time to be at your Destination:</b></p>
+
+           <input type="time" id="Time1" name="Time to get there" min="6:00" max="23:15" required >
+           <label for="Time1"> What's your estimated time of arrival?</label>
+
+           <p><i class="fa fa-clock-o fa-fw"></i> &#160;<b>If you will be returing back, What time?:</b></p>
+
+           <input type="checkbox" id="Time2" name="Time to return back" value="I'm not returing">
+           <label for="Time2">Not returing back</label><br>
+           <input type="checkbox" id="Time3" name="Time to return back" value="Not Sure">
+           <label for="Time3">Not Sure</label><br>
+           <input type="time" id="Time4" name="Time to return back" min="6:00" max="23:15" required >
+           <label for="Time4"> What's your time of return?</label>
+
+           <p><i class="fa fa-commenting-o fa-fw"></i> &#160;<b>Any message for the transit opertior?</b></p>           
+           <textarea name="Any message" id="Any-message" placeholder="Anything you like us to know about your trip like, use back door or something"></textarea>
+           
+           <p style="text-align: center;"><i class="fa fa-key fa-fw"></i> &#160;<b>Pass the Validation to Submit</b></p> 
+           <hr>
+           <p id="randomText">Generating...</p>
+    
+           <label for="userInput">Enter the generated text:</label>
+           <input type="text" id="userInput" placeholder="Generated text here...">
+           <p id="validationResult" autocomplete="off"></p>
+           <div class="div11">
+           <input type="button" value="Validate"  onclick="validateInput()">
+           <input type="submit" id="submitb" disabled>
+           </div>      
+         </form>
+       </div>
+
+       <img src="./Paratransitimage/paratra4444.png" alt="vehicle" width="90.34 px" height="32.29 px" class="img4">
+       <div class="div8"></div>
+       <div class="div9"></div>
+
+       <div class="div10">
+        <p> © 2023 City of Regina</p>
+        <a href="https://www.regina.ca/privacy/" target="_blank" title="Privacy">Privacy</a>
+        <a href="https://www.regina.ca/terms/" target="_blank" title="Terms of Use">Terms of Use</a>
+       </div>
+       <div id="snackbar">Please fill in all Identity fields above.</div>
+     </div>
+   </div>
+   <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+   <script>
+
+     var btn = document.getElementById("submitb");
+     btn.addEventListener('click', function(e){
+     e.preventDefault()
+
+
+       var fname = document.getElementById('fname').value;
+       var lname = document.getElementById('lname').value;
+       var email = document.getElementById('email').value;
+       var tel = document.getElementById('tel').value;
+       var Home = document.getElementById('Home-Address').value;
+       var Today = document.getElementById('Today').value
+       var Different1 = document.getElementById('Different1').value
+       var accompanied1 = document.getElementById('Are-you-accompanied-by-anyone1').value
+       var accompanied2 = document.getElementById('Are-you-accompanied-by-anyone2').value
+       var HomePickup1 = document.getElementById('HomePickup1').value
+       var HomePickup2 = document.getElementById('HomePickup2').value
+       var HomeDropoff1 = document.getElementById('HomeDropoff1').value
+       var HomeDropoff2 = document.getElementById('HomeDropoff2').value
+       var Time1 = document.getElementById('Time1').value
+       var Time2 = document.getElementById('Time2').value
+       var Time3 = document.getElementById('Time3').value
+       var Time4 = document.getElementById('Time4').value
+       var Any = document.getElementById('Any-message').value
+       var body = 'Frist-Name: '+fname + '<br/> Last-Name: '+lname + '<br/> Email: '+email +'<br/> Tel: '+tel +'<br/> Home-Address: '+Home +'<br/> Name: '+Today +'<br/> Name: '+Different1 +'<br/> Name: '+accompanied1 +'<br/> Name: '+accompanied2 +'<br/> Name: '+HomePickup1 +'<br/> Name: '+HomePickup2 +'<br/> Name: '+HomeDropoff1 +'<br/> Name: '+HomeDropoff2 +'<br/> Name: '+Time1 +'<br/> Name: '+Time2 +'<br/> Name: '+Time3 +'<br/> Name: '+Time4 +'<br/> Name: '+Any;
+
+            Email.send({
+            SecureToken : "bb646ab6-8277-4261-9220-fb0bbdf21c4c",
+            To : 'chinonsoclery@gmail.com',
+            From : "chinonso1311@gmail.com",
+            Subject : "Book-Paratransit",
+            Body : "body",
+            }).then(
+              message => alert(message)
+            )
+     })
+    
+
+
+
+
+
+
+     function ok() {
+     location.replace("./Paratransit-Booking.html")
+     }
+     
+
+     //the code below is to generat random code for the user to submit*************************
+
+     let generatedText = generateRandomText(); // Generate initial random text
+
+     function generateRandomText() {
+     const randomTextElement = document.getElementById('randomText');
+     
+     // Generate a random string of letters and numbers
+     const randomString = generateRandomString();
+     
+     // Update the content of the <p> element with the random string
+     randomTextElement.innerHTML = `Generated Text: <b> ${randomString} </b>`;
+    
+      return randomString; // Return the generated text
+     }
+
+     function generateRandomString() {
+     const characters = '0123456789';
+     let randomString = '';
+     const length = 3; // You can adjust the desired length
+    
+     for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        randomString += characters.charAt(randomIndex);
+      }
+    
+      return randomString;
+     }
+     //****************************************************************************************
+
+     function validateInput() {
+      var fname = document.getElementById('fname').value;
+      var lname = document.getElementById('lname').value;
+      var email = document.getElementById('email').value;
+      var tel = document.getElementById('tel').value;
+      var Home = document.getElementById('Home-Address').value;
+      if (fname === '' || lname === '' || email === ''|| tel === ''|| Home === '') {
+        bar()
+      }
+      else{
+      validateInputs()
+      }
+      }
+
+     
+     function mouseOver() {
+     document.getElementById("submitb").style.backgroundImage = 'linear-gradient(to bottom right, #ba3738, #e28346)';
+     }
+     function mouseOut() {
+     document.getElementById("submitb").style.backgroundImage = 'linear-gradient(to bottom right, #0174b9 , #01497e)';
+     }
+
+     //the code below is to display if the the user try to validate if some the text fille are missing********
+     function bar() {
+     var x = document.getElementById("snackbar");
+     x.className = "show";
+     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+     }
+     //*************************************************************************************************************
+
+     // the code below is for the user to pass the code validation to be able the submit****************************
+     function validateInputs() {
+     const userInput = document.getElementById('userInput').value;
+     const userInput1 = document.getElementById('userInput');
+     const validationResultElement = document.getElementById('validationResult');
+     const submitb = document.getElementById('submitb');
+    
+      if (userInput === generatedText) {
+      validationResultElement.textContent = 'Validation successful!';
+      validationResultElement.style.color = 'green'
+      userInput1.disabled = true;
+      userInput1.style.color ='white'
+      userInput1.style.backgroundColor ='#009a00';
+      submitb.disabled = false;
+      submitb.style.backgroundImage ='linear-gradient(to bottom right, #0174b9 , #01497e)'
+      submitb.style.color ='white'
+      document.getElementById("submitb").addEventListener("mouseover", mouseOver)
+      document.getElementById("submitb").addEventListener("mouseout", mouseOut)
+      }else {
+      generatedText = generateRandomText();
+      validationResultElement.textContent = 'Validation failed. Try again.';
+      validationResultElement.style.color = 'red';
+      userInput1.disabled = false;
+      userInput1.style.color ='white'
+      userInput1.style.backgroundColor ='#DB1515';
+      submitb.disabled = true;
+      }
+     }
+     //*************************************************************************************************************
+
+
+     document.getElementById('userInput').style.color= 'black'
+     document.getElementById('userInput').style.textAlign= 'center'
+     document.getElementById('userInput').style.fontWeight= 'bolder'
+
+
+     //the code below is to display the current time with <p id="localtime></p>"****************
+     var localTimeElement = document.getElementById('localTime');
+     
+     function updateLocalTime() {
+     const localTimeElement = document.getElementById('localTime');
+     const now = new Date();
+     const currentTime = now.toLocaleTimeString();
+   
+     localTimeElement.innerHTML = `<b>Time:</b> ${currentTime}`;
+     }
+     updateLocalTime();
+     
+     setInterval(updateLocalTime, 1000);
+     //*******************************************************************************
+
+
+     //the code below is for when is the day of booking ******************************
+     const checkbox1 = document.getElementById('Today');
+     const dateInput = document.getElementById('Different1');
+        
+     checkbox1.addEventListener('change', function() {
+     if (checkbox1.checked) {
+     dateInput.disabled = true;
+     } else {
+     dateInput.disabled = false;
+     }
+     });
+     //********************************************************************************
+ 
+ 
+     // Restrictions on the dateinput to selection from the current date.**************
+     window.onload=function(){
+     var today = new Date().toISOString().split('T')[0];
+     document.getElementsByName("What-Date for the Ride")[0].setAttribute('min', today);
+     }
+     //********************************************************************************
+ 
+ 
+     // this code below is for where is your where is your pick-up location***********
+     const checkbox2 = document.getElementById("HomePickup1");
+     const textInput = document.getElementById("HomePickup2");
+     
+     checkbox2.addEventListener('change', function() {
+     textInput.disabled = this.checked;
+     });
+     textInput.addEventListener('input', function() {
+     checkbox2.disabled = this.value.trim() !== '';
+     });
+     //***************************************************************************** 
+  
+  
+     // this code below is for where is your destinaton location********************
+     const checkbox3 = document.getElementById("HomeDropoff1");
+     const textInput2 = document.getElementById("HomeDropoff2");
+  
+     checkbox3.addEventListener('change', function() {
+     textInput2.disabled = this.checked;
+     });
+     textInput2.addEventListener('input', function() {
+     checkbox3.disabled = this.value.trim() !== '';
+     });
+     //***************************************************************************** 
+     
+     //the code below is for If you will be returing back, What time ***************
+     const checkbox11 = document.getElementById('Time2');
+     const checkbox12 = document.getElementById('Time3');
+     const timeInput = document.getElementById('Time4');
+     const HomeDropof1 = document.getElementById('HomeDropof1')
+        
+     function disableTimeInput() {
+     timeInput.disabled = true;
+     }
+     function enableTimeInput() {
+     timeInput.disabled = false;
+     }
+     checkbox11.addEventListener('change', function() {
+      if (checkbox11.checked || checkbox12.checked) {
+      disableTimeInput();
+      } else {
+      enableTimeInput();
+      }
+      });
+      checkbox12.addEventListener('change', function() {
+      if (checkbox11.checked || checkbox12.checked) {
+      disableTimeInput();
+      } else {
+      enableTimeInput();
+      }
+      });
+      enableTimeInput();
+       //***********************************************************************
+
+      checkbox2.addEventListener('change', function() {
+      if (checkbox2.checked) {
+        checkbox3.style.display = 'none';
+        HomeDropof1.innerHTML= 'Home Drop-off not avaliable'
+        HomeDropof1.style.color='red'
+        textInput2.disabled = false
+        textInput2.placeholder="Enter Destination Address in full..."
+      } else {
+        checkbox3.style.display = 'inline-block';
+        textInput2.placeholder="OR Enter A Different Destination Address in full..."
+        HomeDropof1.innerHTML= 'Home Drop-off'
+        HomeDropof1.style.color='black'
+      }
+      });
+   </script>
+ </body>
+</html>
+

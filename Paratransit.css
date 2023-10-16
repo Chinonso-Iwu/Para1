@@ -1,0 +1,503 @@
+.div0{
+    width: 360px;
+    height: 100%;
+    margin: auto;
+    
+    
+    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Foco;
+    box-sizing:border-box;
+    
+}
+::placeholder {
+    color: rgb(118, 117, 117);
+  }
+
+.div1{
+    width: 360px;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    box-sizing: border-box;
+    display: none;
+    
+}
+
+.div2{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%,-50%);
+}
+
+.img1{
+    display: block;
+    margin: auto;
+    scale: 0;
+    animation-name:img1; 
+    animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-delay:.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes img1{
+    0%{scale:0;}
+
+    100%{scale: 1;}   
+}
+
+.img2{
+    margin-top: 30px;
+    position: relative;
+    /*visibility: hidden;*/
+    opacity: 0;
+    animation-name:myfirst; 
+    animation-duration:3s;
+    animation-timing-function:ease;
+    animation-delay:1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes myfirst{
+    0%{opacity: 0;}
+
+    5%{opacity: 0.5}
+
+    10%{opacity: 1}
+
+    15%{left: 0%;}
+
+    80%{left: 74%;}
+
+
+    100%{opacity: 0;}
+
+}
+
+.button1{
+    display: block;
+    width: 160px;
+    height: 45px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    font-family:Helvetica;
+    font-weight:500;
+    font-size:larger;
+    border: none;
+    background-image: linear-gradient(to bottom right, #0174b9 , #01497e);
+    color: white;
+    text-align: center;
+    animation-name:img1; 
+    animation-duration:2s;
+    animation-timing-function:ease-in;
+    animation-fill-mode: forwards;
+}
+
+.fa{
+    margin-left: 5px;
+}
+
+.button1:active{
+    color: #000;
+    background-color:#003399a4;
+}
+
+#div3{
+    display: block ;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+
+.div4{
+    width: 100%;
+    height: 59.56px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+
+}
+.div4>img{
+    margin-left: 5px;
+}
+.div4> .div5{
+    width: 140px;
+    visibility:hidden;
+}
+
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+}
+  
+.progress-bar {
+    height: 8px;
+    background: #04AA6D;
+    width: 0%;
+}
+
+
+
+MARQUEE{
+    width: 100%;
+    height: 40px;
+    margin-top: 3px;
+    font-size:medium;
+    font-family: Foco;
+    background-image: linear-gradient(to right, #0174b9 , #01497e);
+    color: white;
+    display: flex;
+    align-items: center;
+
+}
+
+.P1{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-family:Foco ;
+    margin-bottom: 0;
+    color: #0075ba ;
+}
+
+.P2{
+    margin: 0;
+    text-align: center;
+    color: green;
+    font-family: monospace;
+    font-style: italic;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.div7{ 
+    margin: auto;
+    width:100px;
+}
+
+.div6{
+    width: 98%;
+    margin: auto;
+    margin-top: 2px;
+}
+
+form{
+    font-size:normal;
+}
+.text1{
+    height:35px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: normal;
+}
+
+input[type="email"]{
+    height: 35px;
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: normal;
+}
+
+input[type="number"]{
+    height: 35px;
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: normal;
+}
+
+.date{
+    width: 210px;
+    height: 19px;
+    margin-top: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
+.text{
+    height:29px;
+    width: 351px;
+    margin-top: 3px;
+    margin-bottom: 7px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: normal;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.3);
+    margin-left: 7px;
+    margin-bottom: 9px;
+    
+}
+
+input[type="time"]{
+    margin-left: 7px;
+}
+
+textarea {
+    margin-left: 5px;
+    height:50px;
+    width: 338px;
+    resize: none;
+}
+
+.img4{
+    margin-top: 10px;
+    position: relative;
+    /*visibility: hidden;*/
+    opacity: 0;
+    animation-name:myfirst; 
+    animation-duration:3s;
+    animation-timing-function:ease;
+    animation-delay:1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes myfirst{
+    0%{opacity: 0;}
+
+    5%{opacity: 0.5}
+
+    10%{opacity: 1}
+
+    15%{left: 0%;}
+
+    80%{left: 74%;}
+
+    100%{opacity: 0;}
+
+}
+
+.div8{
+    width: 100%;
+    height: 9px;
+    background-image: linear-gradient(to right, #f47b22 , #fba423);
+    box-sizing: border-box;
+}
+
+.div9{
+    width: 100%;
+    height: 29px;
+    box-sizing: border-box;
+    background-image:url(./Paratransitimage/Capture666p.PNG)
+}
+
+.div10{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #252525;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.div10>a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+#randomText{
+    user-select:none;
+    margin: 0%;
+    margin-top: 10px;
+}
+
+.userInput{
+    display: inline-block;
+    user-select:none;
+    margin: 0%;
+    
+}
+
+#userInput{
+    border-radius: 5px;
+    border: 0.5px gray solid;
+    height: 25px;
+    
+}
+
+#validationResult{
+    display: block;
+    margin: 0;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    
+}
+
+input[type=button]{
+    display: inline-block;
+    width: 105px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    font-size: larger;
+    font-family: Foco;
+    color: white;
+    background-image: linear-gradient(to bottom right, #0174b9 , #01497e);
+    cursor: pointer;
+    
+    
+}
+
+input[type=button]:active{
+    color: #000;
+}
+
+input[type=button]:hover{
+    background-image: linear-gradient(to bottom right , #ba3738, #e28346);
+    color: fff;
+}
+
+input[type=submit]{
+    width: 105px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    font-size: larger;
+    font-family: Foco;
+    color: rgba(255, 255, 255, 0.648);
+    background-color: #0172b998 ;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    
+}
+
+
+
+.div11{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+#div12{
+    visibility: hidden;
+    opacity: 0;
+    width: 360px;
+    border: 1px solid green;
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    height: 1478px;
+    
+
+}
+
+#div12.show1 {
+    visibility: visible;
+    animation: fadein1 0.5s 1s forwards
+}
+
+@keyframes fadein1 {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.popup{
+    top: 290px;
+    position: relative;
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+    background-color: #01497e;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+.popup img {
+    margin-top: -65px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+}
+
+.popup button:hover {
+    background: #6fd649bc;
+}
+
+.popup button:active {
+    background: #6fd6498e;
+}
+
+#snackbar {
+    visibility: hidden;
+    box-sizing: border-box;
+    width: 360px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    bottom: 90px;
+    font-size: 17px;
+  }
+  
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 90px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 90px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
